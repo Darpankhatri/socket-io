@@ -75,7 +75,7 @@
                 let socket = io(ip_address + ':' + socket_port);
                 let chatInput = $('#chatInput');
 
-                let chanel_id = {{ $_GET['id'] }};
+                let chanel_id = {{ $_GET['id'] ?? '2' }};
                 socket.emit('joinChannel', 'chat'+chanel_id);
 
                 chatInput.keypress(function(e) {

@@ -2,7 +2,7 @@ const express = require('express');
 
 const app = express();
 
-
+var cnt = 0
 const server = require('http').createServer(app);
 
 
@@ -13,6 +13,7 @@ const io = require('socket.io')(server, {
 
 io.on('connection', (socket) => {
     console.log('connection');
+    cnt += 1;
     socket.on('joinChannel', (channel) => {
         socket.join(channel); // Join the specified room/channel
         console.log(channel);
@@ -29,6 +30,7 @@ io.on('connection', (socket) => {
 
     socket.on('disconnect', (socket) => {
         console.log('Disconnect');
+        cnt -= 1;
     });
 });
 
