@@ -24,7 +24,7 @@ io.on('connection', (socket) => {
 
 
         // socket.broadcast.emit('sendChatToClient', message['message']);
-        io.to(message['channel']).emit('sendChatToClient', message['message']);
+        io.to(message['channel']).emit('sendChatToClient', message);
     });
 
 
