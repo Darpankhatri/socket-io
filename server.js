@@ -1,9 +1,14 @@
 const express = require('express');
+const fs = require('fs');
 
 const app = express();
 
 var cnt = 0
-const server = require('http').createServer(app);
+const options = {
+    key: fs.readFileSync('certificates/key.pem'),
+    cert: fs.readFileSync('certificates/cert.pem')
+};
+const server = require('http').createServer(options,app);
 
 
 const io = require('socket.io')(server, {

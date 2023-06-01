@@ -83,7 +83,7 @@
                 
                 const notification = new Notification('New Message', {
                     body: 'You have a new message!',
-                    icon: 'https://i.ytimg.com/vi/wKhNL3XEwi4/hqdefault.jpg',
+                    icon: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Socket-io.svg/100px-Socket-io.svg.png',
                 });
 
                 notification.onclick = function() {
@@ -135,7 +135,7 @@
                         
                         const notification = new Notification('New Message', {
                             body: message.message,
-                            icon: 'https://i.ytimg.com/vi/wKhNL3XEwi4/hqdefault.jpg',
+                            icon: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Socket-io.svg/100px-Socket-io.svg.png',
                         });
     
                         notification.onclick = function() {
