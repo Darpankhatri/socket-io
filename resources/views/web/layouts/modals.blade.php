@@ -140,7 +140,7 @@
 
                     <div class="profile-body">
                         <div class="avatar avatar-xl">
-                            <img class="avatar-img" src="assets/img/avatars/1.jpg" alt="#">
+                            <img class="avatar-img" src="{{ asset('chat/img/avatars/1.jpg') }}" alt="#">
                         </div>
 
                         <h4 class="mb-1">William Wright</h4>
@@ -301,7 +301,7 @@
 
                     <div class="profile-body">
                         <div class="avatar avatar-xl">
-                            <img class="avatar-img" src="assets/img/avatars/9.jpg" alt="#">
+                            <img class="avatar-img" src="{{ asset('chat/img/avatars/9.jpg') }}" alt="#">
 
                             <a href="#"
                                 class="badge badge-lg badge-circle bg-primary text-white border-outline position-absolute bottom-0 end-0">
