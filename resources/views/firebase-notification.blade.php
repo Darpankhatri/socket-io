@@ -41,15 +41,16 @@
     <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase.js"></script>
     <script>
         var firebaseConfig = {
-            apiKey: "{{ env('apiKey') }}",
-            authDomain: "{{ env('authDomain') }}",
-            databaseURL: "{{ env('databaseURL') }}",
-            projectId: "{{ env('projectId') }}",
-            storageBucket: "{{ env('storageBucket') }}",
-            messagingSenderId: "{{ env('messagingSenderId') }}",
-            appId: "{{ env('appId') }}",
-            measurementId: "{{ env('measurementId') }}"
+            apiKey: "AIzaSyBTS-VxV58VjlZKgQeJ6TKmdUYq2cKWBFE",
+            authDomain: "laravel-notification-38e38.firebaseapp.com",
+            databaseURL: "https://laravel-notification-38e38.firebaseio.com",
+            projectId: "laravel-notification-38e38",
+            storageBucket: "laravel-notification-38e38.appspot.com",
+            messagingSenderId: "306945239752",
+            appId: "1:306945239752:web:e6616143604a4219b1d3fd",
+            measurementId: "G-X1BNGPRKV0"
         };
+        // measurementId: G-R1KQTR3JBN
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
         const messaging = firebase.messaging();

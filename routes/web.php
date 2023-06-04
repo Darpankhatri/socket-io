@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PushNotification;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,3 +21,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+Route::post('/save-token', [PushNotification::class, 'saveToken'])->name('save-token');
+Route::post('/send-notification', [PushNotification::class, 'sendNotification'])->name('send.notification');
