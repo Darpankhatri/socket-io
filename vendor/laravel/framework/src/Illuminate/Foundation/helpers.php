@@ -143,7 +143,12 @@ if (! function_exists('asset')) {
      */
     function asset($path, $secure = null)
     {
-        return app('url')->asset($path, $secure);
+        $demo = "127.0.0.1";
+        if(strpos(url('/'), $demo) !== false){
+            return app('url')->asset($path, $secure);
+        }else{
+            return app('url')->asset("public/".$path, $secure);
+        }
     }
 }
 
