@@ -249,7 +249,7 @@
                 <!-- List -->
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">
-                        <a href="#" class="text-danger">Logout</a>
+                        <a href="{{ route('logout') }}" class="text-danger">Logout</a>
                     </li>
                 </ul>
                 <!-- List -->
