@@ -1,0 +1,60 @@
+server key
+AAAAR3dcqsg:APA91bEQmkmMV6iA09IP1dFcf1tLAQC1pVcMD1nLYZqykVtGW1Qe0-La8ExVgy2Q3D-GOMmU6gsLa1fv5hD2LtVTwqIp-Bf5gq8krJA-1HJL7PRGP3anRlbiBzwQ16p0E6cJq3mDHuTS
+
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyBTS-VxV58VjlZKgQeJ6TKmdUYq2cKWBFE",
+    authDomain: "laravel-notification-38e38.firebaseapp.com",
+    projectId: "laravel-notification-38e38",
+    storageBucket: "laravel-notification-38e38.appspot.com",
+    messagingSenderId: "306945239752",
+    appId: "1:306945239752:web:e6616143604a4219b1d3fd",
+    measurementId: "G-X1BNGPRKV0"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
+
+
+npm install firebase
+
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyBTS-VxV58VjlZKgQeJ6TKmdUYq2cKWBFE",
+  authDomain: "laravel-notification-38e38.firebaseapp.com",
+  projectId: "laravel-notification-38e38",
+  storageBucket: "laravel-notification-38e38.appspot.com",
+  messagingSenderId: "306945239752",
+  appId: "1:306945239752:web:e6616143604a4219b1d3fd",
+  measurementId: "G-X1BNGPRKV0"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
+npm install -g firebase-tools
+
+firebase login
+
+
+firebase init
+
+
+firebase deploy

@@ -96,7 +96,7 @@
 
     <script>
         $(function() {
-            var randomValue = Math.random();
+            var randomValue = new Date().getTime();
             console.log(randomValue)
             let ip_address = '127.0.0.1';
             let socket_port = '3000';
