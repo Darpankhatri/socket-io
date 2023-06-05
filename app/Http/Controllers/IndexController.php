@@ -8,12 +8,37 @@ use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Hash;
+use App\Models\sessions;
 use App\Models\login_sessions;
 use Stevebauman\Location\Facades\Location;
 
 class IndexController extends Controller
 {
     //
+    public function check_yes()
+    {
+        $user = sessions::all();
+        foreach($user as $key => $data){
+            $deviceRegex = '/\((.*?)\)/';
+            $browserRegex = '/([a-zA-Z]+)\/([\d.]+)/';
+            $userAgent = $data->user_agent;
+            // Extract device information
+            preg_match($deviceRegex, $userAgent, $deviceMatches);
+            $deviceInfo = $deviceMatches[1];
+
+            // Extract browser information
+            preg_match_all($browserRegex, $userAgent, $browserMatches);
+            $browsers = $browserMatches[1];
+            $browserVersions = $browserMatches[2];
+
+            // Get the last browser and its version
+            $browser = end($browsers);
+            $browserVersion = end($browserVersions);
+
+            if($key == 2)
+                dd($browser,$browserVersion);
+        }
+    }
     public function login(Request $request)
     {
         $ip = $request->ip();
