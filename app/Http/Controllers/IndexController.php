@@ -41,6 +41,7 @@ class IndexController extends Controller
                 $userSession->user_id = $user->id;
                 $userSession->session_id = session()->getId();
                 $userSession->device_token = $request->device;
+                $userSession->last_seen = now();
                 $userSession->ip = $ip;
                 $userSession->save();
 

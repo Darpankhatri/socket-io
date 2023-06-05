@@ -37,3 +37,4 @@ Route::post('/send-notification', [PushNotification::class, 'sendNotification'])
 Route::get('my-chat',[MessageController::class,'my_chat'])->name('my.chat');
 Route::get('logout',[HomeController::class,'logout'])->name('logout');
 Route::post('login',[IndexController::class,'login'])->name('login');
+Route::get('online-user', [HomeController::class, 'online_user'])->name('online-user');

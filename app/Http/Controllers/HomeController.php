@@ -36,4 +36,10 @@ class HomeController extends Controller
         Auth::logout();
         return redirect()->route('home')->with('message','Logout successfully');
     }
+
+    public function online_user()
+    {
+        $users = User::all();
+        return view('users',compact('users'));
+    }
 }
