@@ -1142,7 +1142,6 @@
         <div class="tab-pane fade h-100 show active" id="tab-content-chats" role="tabpanel">
             <div class="d-flex flex-column h-100 position-relative">
                 <div class="hide-scrollbar">
-
                     <div class="container py-8">
                         <!-- Title -->
                         <div class="mb-8">
@@ -1554,7 +1553,16 @@
                         </div>
                         <!-- Chats -->
                     </div>
-
+                    <!-- overlay start -->
+                    <div class="overlay">
+                        <div class="overlayDoor"></div>
+                        <div class="overlayContent">
+                            <div class="loader">
+                                <div class="inner"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- overlay close -->
                 </div>
             </div>
         </div>
