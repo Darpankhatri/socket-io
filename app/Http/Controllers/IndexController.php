@@ -42,7 +42,8 @@ class IndexController extends Controller
     public function login(Request $request)
     {
         $ip = $request->ip();
-        // $ip = "103.217.178.0";
+        if($ip == '127.0.0.1')
+            $ip = "103.217.178.0";
         // $location = Location::get($ip);
         
         $validate = Validator::make($request->all(), [
