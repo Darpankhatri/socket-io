@@ -18,25 +18,37 @@ class IndexController extends Controller
     public function check_yes()
     {
         $user = sessions::all();
+        // dd($user);
+        // $user = sessions::all();
         foreach($user as $key => $data){
             $deviceRegex = '/\((.*?)\)/';
             $browserRegex = '/([a-zA-Z]+)\/([\d.]+)/';
-            $userAgent = $data->user_agent;
-            // Extract device information
-            preg_match($deviceRegex, $userAgent, $deviceMatches);
-            $deviceInfo = $deviceMatches[1];
+            // $userAgent = $data->user_agent;
+            $userAgentString = "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Mobile Safari/537.36";
 
-            // Extract browser information
-            preg_match_all($browserRegex, $userAgent, $browserMatches);
-            $browsers = $browserMatches[1];
-            $browserVersions = $browserMatches[2];
+            $browserInfo = get_browser($userAgentString, true);
+            dd($browserInfo);
+            $device = $browserInfo['device_name'];
+            $browser = $browserInfo['browser'];
+            $browserVersion = $browserInfo['version'];
+            dd($browser,$browserVersion,$device);
 
-            // Get the last browser and its version
-            $browser = end($browsers);
-            $browserVersion = end($browserVersions);
+            // // Extract device information
+            // preg_match($deviceRegex, $userAgent, $deviceMatches);
+            // $deviceInfo = $deviceMatches[1];
 
-            if($key == 2)
-                dd($browser,$browserVersion);
+            // // Extract browser information
+            // preg_match_all($browserRegex, $userAgent, $browserMatches);
+            // $browsers = $browserMatches[1];
+            // $browserVersions = $browserMatches[2];
+
+            // // Get the last browser and its version
+            // $browser = end($browsers);
+            // $browserVersion = end($browserVersions);
+
+            // // if($key == 2)
+            // $location = Location::get($data->login_session->ip);
+            // dd($browser,$browserVersion,$location);
         }
     }
     public function login(Request $request)

@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use Cache;
+use App\Models\login_sessions;
 use Illuminate\Support\Facades\Log;
 
 class UserActivity
@@ -28,9 +29,10 @@ class UserActivity
             ];
             
             Cache::put('user-is-online-' . Auth::user()->id, $records, $expiresAt);
-            Log::info('last login check');
+            
             /* last seen */
-            // User::where('id', Auth::user()->id)->update(['last_seen' => now()]);
+            login_sessions::where('session_id',session()->getId())->where('user_id', Auth::user()->id)->update(['last_seen' => now()]);
+            User::where('id', Auth::user()->id)->update(['last_seen' => now()]);
         }
   
         return $next($request);
