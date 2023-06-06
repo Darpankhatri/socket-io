@@ -11,45 +11,27 @@ use Illuminate\Support\Facades\Hash;
 use App\Models\sessions;
 use App\Models\login_sessions;
 use Stevebauman\Location\Facades\Location;
+use WhichBrowser\Parser;
+use App\Events\AfterControllerReturned;
 
 class IndexController extends Controller
 {
     //
     public function check_yes()
     {
-        $user = sessions::all();
-        // dd($user);
+        dd("here");
         // $user = sessions::all();
-        foreach($user as $key => $data){
-            $deviceRegex = '/\((.*?)\)/';
-            $browserRegex = '/([a-zA-Z]+)\/([\d.]+)/';
-            // $userAgent = $data->user_agent;
-            $userAgentString = "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Mobile Safari/537.36";
+        
+        // foreach($user as $key => $data){
+        //     // $userAgent = $data->user_agent;
+        //     $userAgentString = "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Mobile Safari/537.36";
 
-            $browserInfo = get_browser($userAgentString, true);
-            dd($browserInfo);
-            $device = $browserInfo['device_name'];
-            $browser = $browserInfo['browser'];
-            $browserVersion = $browserInfo['version'];
-            dd($browser,$browserVersion,$device);
+        //     $browserInfo = new Parser($userAgentString);
+        //     $browser = $browserInfo->browser->type . ' ' . $browserInfo->browser->name;
+        //     $device = $browserInfo->os->name . ' ' . $browserInfo->device->type;
+        //     dd(ucwords($browser),ucwords($device));
 
-            // // Extract device information
-            // preg_match($deviceRegex, $userAgent, $deviceMatches);
-            // $deviceInfo = $deviceMatches[1];
-
-            // // Extract browser information
-            // preg_match_all($browserRegex, $userAgent, $browserMatches);
-            // $browsers = $browserMatches[1];
-            // $browserVersions = $browserMatches[2];
-
-            // // Get the last browser and its version
-            // $browser = end($browsers);
-            // $browserVersion = end($browserVersions);
-
-            // // if($key == 2)
-            // $location = Location::get($data->login_session->ip);
-            // dd($browser,$browserVersion,$location);
-        }
+        // }
     }
     public function login(Request $request)
     {
@@ -59,10 +41,8 @@ class IndexController extends Controller
         // $location = Location::get($ip);
         
         $validate = Validator::make($request->all(), [
-
             'email' => 'required|email',
             'password' => 'required|min:5',
-            
         ]);
 
         if ($validate->fails()) {
@@ -74,14 +54,25 @@ class IndexController extends Controller
         if ($user) {
             if (Hash::check($request->password,$user->password)) {
                 Auth::loginUsingId($user->id);
-                 
+                
+                $session = sessions::where('id',session()->getId())->first();
+                dd(session()->getId());
+                $userAgentString = $session->user_agent;
+                $browserInfo = new Parser($userAgentString);
+                $browser = $browserInfo->browser->type . ' ' . $browserInfo->browser->name;
+                $device = $browserInfo->os->name . ' ' . $browserInfo->device->type;
+
                 $userSession = new login_sessions;
                 $userSession->user_id = $user->id;
                 $userSession->session_id = session()->getId();
                 $userSession->device_token = $request->device;
                 $userSession->last_seen = now();
+                // $userSession->device_info = ucwords($device);
+                // $userSession->browser_info = ucwords($browser);
                 $userSession->ip = $ip;
                 $userSession->save();
+
+                event(new AfterControllerReturned());
 
                 return redirect()->route('my.chat');
             }
