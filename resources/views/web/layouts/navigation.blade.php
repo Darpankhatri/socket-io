@@ -35,8 +35,8 @@
 
         <!-- New chat -->
         <li class="nav-item">
-            <a class="nav-link py-0 py-lg-8" id="tab-create-chat" href="#tab-content-create-chat"
-                title="Create chat" data-bs-toggle="tab" role="tab">
+            <a class="nav-link py-0 py-lg-8" id="tab-create-chat" href="#tab-content-create-chat" title="Create chat"
+                data-bs-toggle="tab" role="tab">
                 <div class="icon icon-xl">
                     <i class="fad fa-edit fa-lg"></i>
                     {{-- <i class="fas fa-edit" width="20px" style="color: #3f78d9;"></i> --}}
@@ -49,7 +49,7 @@
             <a class="nav-link py-0 py-lg-8" id="tab-friends" href="#tab-content-friends" title="Friends"
                 data-bs-toggle="tab" role="tab">
                 <div class="icon icon-xl">
-                    <i class="fad fa-users fa-lg" ></i>
+                    <i class="fad fa-users fa-lg"></i>
                 </div>
             </a>
         </li>
@@ -82,9 +82,9 @@
             <a class="nav-link py-0 py-lg-8" id="tab-support" href="#tab-content-support" title="Support"
                 data-bs-toggle="tab" role="tab">
                 <div class="icon icon-xl">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round" class="feather feather-layout">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" class="feather feather-layout">
                         <rect x="3" y="3" width="18" height="18" rx="2"
                             ry="2"></rect>
                         <line x1="3" y1="9" x2="21" y2="9"></line>
@@ -96,7 +96,7 @@
 
         <!-- Switcher -->
         <li class="nav-item d-none d-xl-block">
-            <a class="switcher-btn nav-link py-0 py-lg-8" href="#!" title="Themes">
+            <a class="switcher-btn nav-link py-0 py-lg-8" style="cursor: pointer;" title="Themes">
                 <div class="switcher-icon switcher-icon-dark icon icon-xl d-none" data-theme-mode="dark">
                     <i class="fal fa-moon fa-lg"></i>
                 </div>
@@ -172,8 +172,8 @@
                                 </li>
 
                                 <li class="nav-item">
-                                    <a class="nav-link" data-bs-toggle="pill" href="#create-chat-members" role="tab"
-                                        aria-controls="create-chat-members" aria-selected="true">
+                                    <a class="nav-link" data-bs-toggle="pill" href="#create-chat-members"
+                                        role="tab" aria-controls="create-chat-members" aria-selected="true">
                                         People
                                     </a>
                                 </li>
@@ -219,7 +219,8 @@
                                                     <i class="fal fa-image fa-lg"></i>
                                                 </span>
 
-                                                <div class="badge badge-lg badge-circle bg-primary border-outline position-absolute bottom-0 end-0">
+                                                <div
+                                                    class="badge badge-lg badge-circle bg-primary border-outline position-absolute bottom-0 end-0">
                                                     <i class="fal fa-plus"></i>
                                                 </div>
 
@@ -304,7 +305,8 @@
                                                 <div class="col-auto">
                                                     <div class="avatar ">
 
-                                                        <img class="avatar-img" src="{{ asset('chat/img/avatars/6.jpg') }}"
+                                                        <img class="avatar-img"
+                                                            src="{{ asset('chat/img/avatars/6.jpg') }}"
                                                             alt="">
 
 
@@ -339,7 +341,8 @@
                                                 <div class="col-auto">
                                                     <div class="avatar ">
 
-                                                        <img class="avatar-img" src="{{ asset('chat/img/avatars/5.jpg') }}"
+                                                        <img class="avatar-img"
+                                                            src="{{ asset('chat/img/avatars/5.jpg') }}"
                                                             alt="">
 
 
@@ -403,7 +406,8 @@
                                                 <div class="col-auto">
                                                     <div class="avatar avatar-online">
 
-                                                        <img class="avatar-img" src="{{ asset('chat/img/avatars/8.jpg') }}"
+                                                        <img class="avatar-img"
+                                                            src="{{ asset('chat/img/avatars/8.jpg') }}"
                                                             alt="">
 
 
@@ -467,7 +471,8 @@
                                                 <div class="col-auto">
                                                     <div class="avatar ">
 
-                                                        <img class="avatar-img" src="{{ asset('chat/img/avatars/11.jpg') }}"
+                                                        <img class="avatar-img"
+                                                            src="{{ asset('chat/img/avatars/11.jpg') }}"
                                                             alt="">
 
 
@@ -536,7 +541,8 @@
                                                 <div class="col-auto">
                                                     <div class="avatar ">
 
-                                                        <img class="avatar-img" src="{{ asset('chat/img/avatars/4.jpg') }}"
+                                                        <img class="avatar-img"
+                                                            src="{{ asset('chat/img/avatars/4.jpg') }}"
                                                             alt="">
 
 
@@ -566,7 +572,8 @@
                                                 <div class="col-auto">
                                                     <div class="avatar avatar-online">
 
-                                                        <img class="avatar-img" src="{{ asset('chat/img/avatars/7.jpg') }}"
+                                                        <img class="avatar-img"
+                                                            src="{{ asset('chat/img/avatars/7.jpg') }}"
                                                             alt="">
 
 
@@ -1202,7 +1209,8 @@
                                     <div class="row align-items-center gx-4">
                                         <div class="col-auto">
                                             <div class="avatar avatar-xs">
-                                                <img class="avatar-img" src="{{ asset('chat/img/avatars/bootstrap.svg') }}"
+                                                <img class="avatar-img"
+                                                    src="{{ asset('chat/img/avatars/bootstrap.svg') }}"
                                                     alt="Bootstrap Community">
                                             </div>
                                         </div>
@@ -1307,13 +1315,13 @@
                                         <div class="col-auto">
                                             <div class="avatar-group-trigon avatar-group-trigon-sm">
                                                 <div class="avatar avatar-sm">
-                                                    <img class="avatar-img" src="{{ asset('chat/img/avatars/7.jpg') }}"
-                                                        alt="#">
+                                                    <img class="avatar-img"
+                                                        src="{{ asset('chat/img/avatars/7.jpg') }}" alt="#">
                                                 </div>
 
                                                 <div class="avatar avatar-sm">
-                                                    <img class="avatar-img" src="{{ asset('chat/img/avatars/9.jpg') }}"
-                                                        alt="#">
+                                                    <img class="avatar-img"
+                                                        src="{{ asset('chat/img/avatars/9.jpg') }}" alt="#">
                                                 </div>
 
                                                 <div class="avatar avatar-sm">
@@ -1489,10 +1497,10 @@
                                     <div class="row gx-5">
                                         <div class="col-auto">
                                             <div class="avatar">
-                                                <svg class="avatar-img placeholder-img" width="100%"
-                                                    height="100%" xmlns="http://www.w3.org/2000/svg"
-                                                    role="img" aria-label="Placeholder"
-                                                    preserveAspectRatio="xMidYMid slice" focusable="false">
+                                                <svg class="avatar-img placeholder-img" width="100%" height="100%"
+                                                    xmlns="http://www.w3.org/2000/svg" role="img"
+                                                    aria-label="Placeholder" preserveAspectRatio="xMidYMid slice"
+                                                    focusable="false">
                                                     <title>Placeholder</title>
                                                     <rect width="100%" height="100%" fill="#868e96">
                                                     </rect>
@@ -1523,10 +1531,10 @@
                                     <div class="row gx-5">
                                         <div class="col-auto">
                                             <div class="avatar">
-                                                <svg class="avatar-img placeholder-img" width="100%"
-                                                    height="100%" xmlns="http://www.w3.org/2000/svg"
-                                                    role="img" aria-label="Placeholder"
-                                                    preserveAspectRatio="xMidYMid slice" focusable="false">
+                                                <svg class="avatar-img placeholder-img" width="100%" height="100%"
+                                                    xmlns="http://www.w3.org/2000/svg" role="img"
+                                                    aria-label="Placeholder" preserveAspectRatio="xMidYMid slice"
+                                                    focusable="false">
                                                     <title>Placeholder</title>
                                                     <rect width="100%" height="100%" fill="#868e96">
                                                     </rect>
@@ -2293,15 +2301,7 @@
                                 <div class="input-group">
                                     <div class="input-group-text">
                                         <div class="icon icon-lg">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                                                class="feather feather-search">
-                                                <circle cx="11" cy="11" r="8">
-                                                </circle>
-                                                <line x1="21" y1="21" x2="16.65"
-                                                    y2="16.65"></line>
-                                            </svg>
+                                            <i class="fal fa-search"></i>
                                         </div>
                                     </div>
 
@@ -2318,42 +2318,24 @@
                                 <div class="row align-items-center gx-5">
                                     <div class="col-auto">
                                         <div class="avatar">
-                                            <img src="{{ asset('chat/img/avatars/1.jpg') }}" alt="#" class="avatar-img">
+                                            <img src="{{ asset(Auth::user()->image) }}" alt="#"
+                                                class="avatar-img">
 
                                             <div
                                                 class="badge badge-circle bg-secondary border-outline position-absolute bottom-0 end-0">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="24"
-                                                    height="24" viewBox="0 0 24 24" fill="none"
-                                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                                    stroke-linejoin="round" class="feather feather-image">
-                                                    <rect x="3" y="3" width="18"
-                                                        height="18" rx="2" ry="2">
-                                                    </rect>
-                                                    <circle cx="8.5" cy="8.5" r="1.5">
-                                                    </circle>
-                                                    <polyline points="21 15 16 10 5 21"></polyline>
-                                                </svg>
+                                                <i class="fad fa-edit"></i>
                                             </div>
                                             <input id="upload-profile-photo" class="d-none" type="file">
                                             <label class="stretched-label mb-0" for="upload-profile-photo"></label>
                                         </div>
                                     </div>
                                     <div class="col">
-                                        <h5>William Pearson</h5>
-                                        <p>wright@studio.com</p>
+                                        <h5>{{ Auth::user()->name }}</h5>
+                                        <p>{{ Auth::user()->email }}</p>
                                     </div>
                                     <div class="col-auto">
-                                        <a href="#" class="text-muted">
-                                            <div class="icon">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="24"
-                                                    height="24" viewBox="0 0 24 24" fill="none"
-                                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                                    stroke-linejoin="round" class="feather feather-log-out">
-                                                    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
-                                                    <polyline points="16 17 21 12 16 7"></polyline>
-                                                    <line x1="21" y1="12" x2="9"
-                                                        y2="12"></line>
-                                                </svg>
+                                        <a href="{{ route('logout') }}" class="text-muted">
+                                            <div class="icon"><i class="far fa-sign-out"></i>
                                             </div>
                                         </a>
                                     </div>
@@ -2390,19 +2372,13 @@
                                                 data-parent="#accordion-profile">
                                                 <div class="accordion-body">
                                                     <div class="form-floating mb-6">
-                                                        <input type="text" class="form-control"
+                                                        <input type="text" name="name" class="form-control" value="{{ Auth::user()->name }}"
                                                             id="profile-name" placeholder="Name">
                                                         <label for="profile-name">Name</label>
                                                     </div>
 
                                                     <div class="form-floating mb-6">
-                                                        <input type="email" class="form-control"
-                                                            id="profile-email" placeholder="Email address">
-                                                        <label for="profile-email">Email</label>
-                                                    </div>
-
-                                                    <div class="form-floating mb-6">
-                                                        <input type="text" class="form-control"
+                                                        <input type="text" name="phone" class="form-control"
                                                             id="profile-phone" placeholder="Phone">
                                                         <label for="profile-phone">Phone</label>
                                                     </div>
@@ -2800,46 +2776,19 @@
                                 <small class="text-muted me-auto">Devices</small>
 
                                 <div class="flex align-items-center text-muted">
-                                    <a href="#" class="text-muted small">End all sessions</a>
-
-                                    <div class="icon icon-xs">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                            viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                                            class="feather feather-log-out">
-                                            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
-                                            <polyline points="16 17 21 12 16 7"></polyline>
-                                            <line x1="21" y1="12" x2="9" y2="12">
-                                            </line>
-                                        </svg>
-                                    </div>
+                                    <a href="#" class="text-muted small">End all sessions
+                                        <div class="icon icon-xs">
+                                            <i class="far fa-sign-out"></i>
+                                        </div>
+                                    </a>
                                 </div>
                             </div>
 
                             <div class="card border-0">
                                 <div class="card-body py-3">
 
-                                    <ul class="list-group list-group-flush">
-                                        <li class="list-group-item">
-                                            <div class="row align-items-center">
-                                                <div class="col">
-                                                    <h5>Windows ⋅ USA, Houston</h5>
-                                                    <p>Today at 2:48 pm ⋅ Browser: Chrome</p>
-                                                </div>
-                                                <div class="col-auto">
-                                                    <span class="text-primary extra-small">active</span>
-                                                </div>
-                                            </div>
-                                        </li>
-
-                                        <li class="list-group-item">
-                                            <div class="row align-items-center">
-                                                <div class="col">
-                                                    <h5>iPhone ⋅ USA, Houston</h5>
-                                                    <p>Yesterday at 2:48 pm ⋅ Browser: Chrome</p>
-                                                </div>
-                                            </div>
-                                        </li>
+                                    <ul class="list-group list-group-flush my-session-here">
+                                        
                                     </ul>
 
                                 </div>

@@ -107,4 +107,31 @@
     }
 }
 
+
 </style>
+
+<style>
+    /* Center the loading animation */
+    .loading-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 20vh;
+    }
+
+    /* Define the loading animation */
+    .loading {
+      border: 8px solid #f3f3f3; /* Light gray */
+      border-top: 8px solid #3498db; /* Blue */
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      animation: spin 2s linear infinite; /* Rotate animation */
+    }
+
+    /* Create the rotate animation */
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>

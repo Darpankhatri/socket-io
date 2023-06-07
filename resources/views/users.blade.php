@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <h1>Laravel Display Online Users - ItSolutionStuff.com</h1>
+        <h1>Laravel Display Online Users</h1>
 
         <table class="table table-bordered data-table">
             <thead>
@@ -30,8 +30,8 @@
                                     $userInfo = Cache::get('user-is-online-' . $user->id);
                                 @endphp
                                 @if ($userInfo)
-                                    <p>Last Seen: {{ $userInfo['last_seen'] }}</p>
-                                    <p>Device: {{ $userInfo['device'] }}</p>
+                                    <p>{{ $userInfo['browser'] }}</p>
+                                    <p>{{ $userInfo['device'] }}</p>
                                 @else
                                     <p>User information not found in cache.</p>
                                 @endif

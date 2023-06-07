@@ -35,7 +35,12 @@ Route::get('/check', [IndexController::class, 'check_yes'])->name('check_yes');
 Route::post('/save-token', [PushNotification::class, 'saveToken'])->name('save-token');
 Route::post('/send-notification', [PushNotification::class, 'sendNotification'])->name('send.notification');
 
-Route::get('my-chat',[MessageController::class,'my_chat'])->name('my.chat');
-Route::get('logout',[HomeController::class,'logout'])->name('logout');
+
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('my-chat',[MessageController::class,'my_chat'])->name('my.chat');
+    Route::get('logout',[HomeController::class,'logout'])->name('logout');
+    Route::get('online-user', [HomeController::class, 'online_user'])->name('online-user');
+
+    Route::get('get-sessions', [HomeController::class, 'get_sessions'])->name('get.sessions');
+});
 Route::post('login',[IndexController::class,'login'])->name('login');
-Route::get('online-user', [HomeController::class, 'online_user'])->name('online-user');

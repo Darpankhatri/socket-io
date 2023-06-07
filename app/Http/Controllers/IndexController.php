@@ -19,7 +19,9 @@ class IndexController extends Controller
     //
     public function check_yes()
     {
-        dd("here");
+        $ip = "103.217.178.0";
+        $location = Location::get($ip);
+        dd($location);
         // $user = sessions::all();
         
         // foreach($user as $key => $data){
@@ -55,12 +57,12 @@ class IndexController extends Controller
             if (Hash::check($request->password,$user->password)) {
                 Auth::loginUsingId($user->id);
                 
-                $session = sessions::where('id',session()->getId())->first();
-                dd(session()->getId());
-                $userAgentString = $session->user_agent;
-                $browserInfo = new Parser($userAgentString);
-                $browser = $browserInfo->browser->type . ' ' . $browserInfo->browser->name;
-                $device = $browserInfo->os->name . ' ' . $browserInfo->device->type;
+                // $session = sessions::where('id',session()->getId())->first();
+                // dd(session()->getId());
+                // $userAgentString = $session->user_agent;
+                // $browserInfo = new Parser($userAgentString);
+                // $browser = $browserInfo->browser->type . ' ' . $browserInfo->browser->name;
+                // $device = $browserInfo->os->name . ' ' . $browserInfo->device->type;
 
                 $userSession = new login_sessions;
                 $userSession->user_id = $user->id;
@@ -72,7 +74,9 @@ class IndexController extends Controller
                 $userSession->ip = $ip;
                 $userSession->save();
 
-                event(new AfterControllerReturned());
+                // event(new AfterControllerReturned());
+                session()->put('user_login', 1);
+
 
                 return redirect()->route('my.chat');
             }
