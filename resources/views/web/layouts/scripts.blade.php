@@ -41,6 +41,8 @@
 <script>
     $(document).ready(function() {
         $('#tab-settings').on('click', function() {
+            
+            $('#tab-content-settings').find('.hide-scrollbar').scrollTop(0);
 			var body = '<div class="loading-container">\
                             <div class="loading"></div>\
 						</div>';
@@ -58,8 +60,6 @@
 					$('.my-session-here').html(data.body);
                 }
             });
-			
-			
         });
     });
 </script>

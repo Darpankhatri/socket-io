@@ -20196,8 +20196,8 @@ textarea.form-control-lg {
 .badge-circle {
     position: relative;
     border-radius: 2.25rem;
-    /* height:calc(1em + .778em); */
-    /* padding:.389em; */
+    height:calc(1em + .778em);
+    padding: 0.389em;
 }
 
 .badge-circle>i,.badge-circle>span {
@@ -21970,8 +21970,8 @@ hr.offcanvas-divider {
 }
 
 .border-outline {
-    /* -webkit-box-shadow:0 0 0 2px #16191c; */
-    /* box-shadow:0 0 0 2px #16191c; */
+    -webkit-box-shadow:0 0 0 2px #16191c;
+    box-shadow:0 0 0 2px #16191c;
 }
 
 .border-outline.border-1 {
