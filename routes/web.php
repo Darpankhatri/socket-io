@@ -42,5 +42,6 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('online-user', [HomeController::class, 'online_user'])->name('online-user');
 
     Route::get('get-sessions', [HomeController::class, 'get_sessions'])->name('get.sessions');
+    Route::post('profile-update', [HomeController::class, 'profile_update'])->name('profile.update');
 });
 Route::post('login',[IndexController::class,'login'])->name('login');

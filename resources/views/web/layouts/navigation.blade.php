@@ -2378,19 +2378,19 @@
                                                     </div>
 
                                                     <div class="form-floating mb-6">
-                                                        <input type="text" name="phone" class="form-control"
+                                                        <input type="text" name="phone" class="form-control" value="{{ Auth::user()->phone }}"
                                                             id="profile-phone" placeholder="Phone">
                                                         <label for="profile-phone">Phone</label>
                                                     </div>
 
                                                     <div class="form-floating mb-6">
                                                         <textarea class="form-control" placeholder="Bio" id="profile-bio" data-autosize="true"
-                                                            style="min-height: 120px;"></textarea>
+                                                            style="min-height: 120px;">{{ Auth::user()->bio }}</textarea>
                                                         <label for="profile-bio">Bio</label>
                                                     </div>
 
                                                     <button type="button"
-                                                        class="btn btn-block btn-lg btn-primary w-100">Save</button>
+                                                        class="btn btn-block btn-lg btn-primary w-100 profile-save">Save</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -2402,8 +2402,8 @@
                                                     data-bs-target="#accordion-profile-body-2" aria-expanded="false"
                                                     aria-controls="accordion-profile-body-2">
                                                     <div>
-                                                        <h5>Connected accounts</h5>
-                                                        <p>Connect with your accounts</p>
+                                                        <h5>Social accounts</h5>
+                                                        <p>Add your social accounts</p>
                                                     </div>
                                                 </a>
                                             </div>
@@ -2591,7 +2591,7 @@
                         <!-- Security -->
 
                         <!-- Storage -->
-                        <div class="mt-8">
+                        {{-- <div class="mt-8">
                             <div class="d-flex align-items-center my-4 px-6">
                                 <small class="text-muted me-auto">Storage</small>
 
@@ -2676,11 +2676,11 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
                         <!-- Storage -->
 
                         <!-- Notifications -->
-                        <div class="mt-8">
+                        {{-- <div class="mt-8">
                             <div class="d-flex align-items-center my-4 px-6">
                                 <small class="text-muted me-auto">Notifications</small>
                             </div>
@@ -2767,7 +2767,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
                         <!-- Notifications -->
 
                         <!-- Devices -->

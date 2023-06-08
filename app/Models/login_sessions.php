@@ -10,4 +10,8 @@ class login_sessions extends Model
   	protected $table = 'login_sessions';
     protected $guarded = [];  
 
+	public function has_session()
+	{
+		return $this->belongsTo(sessions::class,'session_id')->where('user_id','!=',null);
+	}
 }

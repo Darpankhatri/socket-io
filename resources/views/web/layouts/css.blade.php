@@ -10,6 +10,9 @@
 <!-- Template CSS -->
 <link class="css-lt" rel="stylesheet" href="{{ asset('chat/css/template.bundle.css') }}" media="(prefers-color-scheme: light)">
 <link class="css-dk" rel="stylesheet" href="{{ asset('chat/css/template.dark.bundle.css') }}" media="(prefers-color-scheme: dark)">
+
+<link rel="stylesheet" type="text/css" 
+     href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 <style>
         /* loader css start */
 
@@ -134,4 +137,4 @@
       0% { transform: rotate(0deg); }
       100% { transform: rotate(360deg); }
     }
-  </style>
+</style>

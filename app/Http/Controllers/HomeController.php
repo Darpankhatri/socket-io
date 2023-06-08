@@ -50,23 +50,35 @@ class HomeController extends Controller
         $userSession = login_sessions::where('user_id', Auth::user()->id)->orderBy('last_seen','desc')->get();
         $body = '';
         foreach ($userSession as $key => $session) {
-            $location = Location::get($session->ip);
-            $body .= '<li class="list-group-item">
-                        <div class="row align-items-center">
-                            <div class="col">
-                                <h5>'.$session->device_info.' ⋅ '.$location->cityName.', '.$location->countryName.'</h5>
-                                <p>'.Carbon::parse($session->last_seen)->diffForHumans().' ⋅ '.$session->browser_info.'</p>
-                            </div>';
-                            if($key == 0)
-                                $body .= '
-                                    <div class="col-auto">
-                                        <span class="text-primary extra-small">Current</span>
-                                    </div>';
-                        $body .= '
-                        </div>
-                    </li>';
+            if($session->has_session){
+
+                $location = Location::get($session->ip);
+                $body .= '<li class="list-group-item">
+                            <div class="row align-items-center">
+                                <div class="col">
+                                    <h5>'.$session->device_info.' ⋅ '.$location->cityName.', '.$location->countryName.'</h5>
+                                    <p>'.Carbon::parse($session->last_seen)->diffForHumans().' ⋅ '.$session->browser_info.'</p>
+                                </div>';
+                                if($key == 0)
+                                    $body .= '
+                                        <div class="col-auto">
+                                            <span class="text-primary extra-small">Current</span>
+                                        </div>';
+                            $body .= '
+                            </div>
+                        </li>';
+            }
         }
 
         return response()->json(['success'=>'1','body'=>$body]);
+    }
+
+    function profile_update(Request $request) {
+        $user = User::find(Auth::user()->id);
+        $user->name = $request->name;
+        $user->phone = $request->phone;
+        $user->bio = $request->bio;
+        $user->save();
+        return response()->json(['success'=>1]);
     }
 }

@@ -2,6 +2,7 @@
 <script src="{{ asset('chat/js/vendor.js') }}"></script>
 <script src="{{ asset('chat/js/template.js') }}"></script>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 
 <!-- Theme mode -->
 <script>
@@ -37,6 +38,30 @@
     }
 </script>
 
+<script>
+    
+    toastr.options = {
+        "closeButton": true,
+        "progressBar": true,
+        "debug": false,
+        "positionClass": "toast-bottom-right",
+    }
+    @if (Session::has('message'))
+        toastr.success("{{ session('message') }}");
+    @endif
+
+    @if (Session::has('error'))
+        toastr.error("{{ session('error') }}");
+    @endif
+
+    @if (Session::has('info'))
+        toastr.info("{{ session('info') }}");
+    @endif
+
+    @if (Session::has('warning'))
+        toastr.warning("{{ session('warning') }}");
+    @endif
+</script>
 
 <script>
     $(document).ready(function() {
@@ -60,6 +85,33 @@
 					$('.my-session-here').html(data.body);
                 }
             });
+        });
+
+        $('.profile-save').on('click', function() {
+            
+            var name = $('#profile-name').val();
+            var phone = $('#profile-phone').val();
+            var bio = $('#profile-bio').val();
+
+            if(bio == "" || name == "" || phone == ""){
+                toastr.error("Please fill all the fields");
+            }
+            else{
+                $.ajax({
+                    type: "post",
+                    dataType: "json",
+                    url: "{{ route('profile.update') }}",
+                    data: {
+                        'name': name,
+                        'phone': phone,
+                        'bio': bio,
+                        _token: "{{ csrf_token() }}"
+                    },
+                    success: function(data) {
+                        toastr.success("Profile Updated Successfully");
+                    }
+                });
+            }
         });
     });
 </script>
