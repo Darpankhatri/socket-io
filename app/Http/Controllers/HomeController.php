@@ -54,7 +54,7 @@ class HomeController extends Controller
             $body .= '<li class="list-group-item">
                         <div class="row align-items-center">
                             <div class="col">
-                                <h5>'.$session->device_info.' ⋅ '.$location->countryName.'</h5>
+                                <h5>'.$session->device_info.' ⋅ '.$location->cityName.', '.$location->countryName.'</h5>
                                 <p>'.Carbon::parse($session->last_seen)->diffForHumans().' ⋅ '.$session->browser_info.'</p>
                             </div>';
                             if($key == 0)
