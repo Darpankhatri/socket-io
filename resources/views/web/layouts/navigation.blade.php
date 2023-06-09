@@ -2356,7 +2356,7 @@
                                     <div class="accordion accordion-flush" id="accordion-profile">
                                         <div class="accordion-item">
                                             <div class="accordion-header" id="accordion-profile-1">
-                                                <a href="#" class="accordion-button text-reset collapsed"
+                                                <a class="accordion-button text-reset collapsed cursor-pointer"
                                                     data-bs-toggle="collapse"
                                                     data-bs-target="#accordion-profile-body-1" aria-expanded="false"
                                                     aria-controls="accordion-profile-body-1">
@@ -2397,7 +2397,7 @@
 
                                         <div class="accordion-item">
                                             <div class="accordion-header" id="accordion-profile-2">
-                                                <a href="#" class="accordion-button text-reset collapsed"
+                                                <a class="accordion-button text-reset collapsed cursor-pointer"
                                                     data-bs-toggle="collapse"
                                                     data-bs-target="#accordion-profile-body-2" aria-expanded="false"
                                                     aria-controls="accordion-profile-body-2">
@@ -2519,7 +2519,7 @@
                                     <div class="accordion accordion-flush" id="accordion-security">
                                         <div class="accordion-item">
                                             <div class="accordion-header" id="accordion-security-1">
-                                                <a href="#" class="accordion-button text-reset collapsed"
+                                                <a class="accordion-button text-reset collapsed cursor-pointer"
                                                     data-bs-toggle="collapse"
                                                     data-bs-target="#accordion-security-body-1"
                                                     aria-expanded="false" aria-controls="accordion-security-body-1">
@@ -2530,37 +2530,44 @@
                                                 </a>
                                             </div>
 
-                                            <div id="accordion-security-body-1" class="accordion-collapse collapse"
+                                            <div id="accordion-security-body-1" class="accordion-collapse collapse change-password-div"
                                                 aria-labelledby="accordion-security-1"
                                                 data-parent="#accordion-security">
                                                 <div class="accordion-body">
-                                                    <form action="#" autocomplete="on">
-                                                        <div class="form-floating mb-6">
-                                                            <input type="password" class="form-control"
-                                                                id="profile-current-password"
-                                                                placeholder="Current Password" autocomplete="">
-                                                            <label for="profile-current-password">Current
-                                                                Password</label>
-                                                        </div>
+                                                    <div class="form-floating mb-6">
+                                                        <input type="password" class="form-control" name="current_password"
+                                                            id="profile-current-password"
+                                                            placeholder="Current Password" autocomplete="">
+                                                        <label for="profile-current-password">Current
+                                                            Password</label>
+                                                        <span class="invalid-feedback" role="alert">
+                                                            <strong></strong>
+                                                        </span>
+                                                    </div>
 
-                                                        <div class="form-floating mb-6">
-                                                            <input type="password" class="form-control"
-                                                                id="profile-new-password" placeholder="New password"
-                                                                autocomplete="">
-                                                            <label for="profile-new-password">New
-                                                                password</label>
-                                                        </div>
+                                                    <div class="form-floating mb-6">
+                                                        <input type="password" class="form-control" name="new_password"
+                                                            id="profile-new-password" placeholder="New password"
+                                                            autocomplete="">
+                                                        <label for="profile-new-password">New
+                                                            password</label>
+                                                        <span class="invalid-feedback" role="alert">
+                                                            <strong></strong>
+                                                        </span>
+                                                    </div>
 
-                                                        <div class="form-floating mb-6">
-                                                            <input type="password" class="form-control"
-                                                                id="profile-verify-password"
-                                                                placeholder="Verify Password" autocomplete="">
-                                                            <label for="profile-verify-password">Verify
-                                                                Password</label>
-                                                        </div>
-                                                    </form>
+                                                    <div class="form-floating mb-6">
+                                                        <input type="password" class="form-control" name="confirm_password"
+                                                            id="profile-verify-password"
+                                                            placeholder="Verify Password" autocomplete="">
+                                                        <label for="profile-verify-password">Verify
+                                                            Password</label>
+                                                        <span class="invalid-feedback" role="alert">
+                                                            <strong></strong>
+                                                        </span>
+                                                    </div>
                                                     <button type="button"
-                                                        class="btn btn-block btn-lg btn-primary w-100">Save</button>
+                                                        class="btn btn-block btn-lg btn-primary w-100 update-password">Save</button>
                                                 </div>
                                             </div>
                                         </div>

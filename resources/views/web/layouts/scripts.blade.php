@@ -65,8 +65,7 @@
 
 <script>
     $(document).ready(function() {
-        $('#tab-settings').on('click', function() {
-            
+        $('#tab-settings').on('click', function(){
             $('#tab-content-settings').find('.hide-scrollbar').scrollTop(0);
 			var body = '<div class="loading-container">\
                             <div class="loading"></div>\
@@ -88,12 +87,49 @@
         });
 
         $('.profile-save').on('click', function() {
-            
             var name = $('#profile-name').val();
             var phone = $('#profile-phone').val();
             var bio = $('#profile-bio').val();
 
             if(bio == "" || name == "" || phone == ""){
+                toastr.error("Please fill all the fields");
+            }
+            else{
+                $.ajax({
+                    type: "post",
+                    dataType: "json",
+                    url: "{{ route('profile.update') }}",
+                    data: {
+                        'name': name,
+                        'phone': phone,
+                        'bio': bio,
+                        _token: "{{ csrf_token() }}"
+                    },
+                    success: function(data) {
+                        toastr.success("Profile Updated Successfully");
+                    }
+                });
+            }
+        });
+
+        $('.update-password').on('click', function() {
+            var cur_pass = $('#profile-current-password').val();
+            var new_pass = $('#profile-new-password').val();
+            var conf_pass = $('#profile-verify-password').val();
+            var ele = $(this);
+            ele.closest('.change-password-div').find('input.is-invalid').each(function(){
+                $(this).removeClass('is-invalid');
+            })
+
+            if(cur_pass == "" || new_pass == "" || conf_pass == ""){
+                ele.closest('.change-password-div').find('input').each(function(){
+                    if($(this).val() == ""){
+                        $(this).addClass('is-invalid');
+                        var name = $(this).attr('name');
+                        name = name.replace("_",' ');
+                        $(this).closest('div').find('strong').text("Enter "+name);
+                    }
+                })
                 toastr.error("Please fill all the fields");
             }
             else{
