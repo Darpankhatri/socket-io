@@ -81,7 +81,7 @@ class IndexController extends Controller
                 return redirect()->route('my.chat');
             }
             else{
-                return redirect()->back()->with('error','Password Error!');
+                return redirect()->back()->withInput()->with('error','Password Error!');
             }
         }
         else{
