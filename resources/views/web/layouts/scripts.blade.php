@@ -129,24 +129,41 @@
                         name = name.replace("_",' ');
                         $(this).closest('div').find('strong').text("Enter "+name);
                     }
-                })
+                });
                 toastr.error("Please fill all the fields");
             }
             else{
-                $.ajax({
-                    type: "post",
-                    dataType: "json",
-                    url: "{{ route('profile.update') }}",
-                    data: {
-                        'name': name,
-                        'phone': phone,
-                        'bio': bio,
-                        _token: "{{ csrf_token() }}"
-                    },
-                    success: function(data) {
-                        toastr.success("Profile Updated Successfully");
-                    }
-                });
+                if(new_pass != conf_pass){
+                    ele.closest('.change-password-div').find('input[name="confirm_password"]').addClass('is-invalid');
+                    ele.closest('.change-password-div').find('input[name="confirm_password"]').closest('div').find('strong').text("Passwords do not match");
+                    toastr.error("Passwords do not match");
+                }
+                else
+                {
+                    $.ajax({
+                        type: "post",
+                        dataType: "json",
+                        url: "{{ route('password.update') }}",
+                        data: {
+                            'old_pass': cur_pass,
+                            'new_pass': new_pass,
+                            _token: "{{ csrf_token() }}"
+                        },
+                        success: function(data) {
+                            if(data.success)
+                            {
+                                ele.closest('.change-password-div').find('input').each(function(index,exe){
+                                    $(exe).val("");
+                                });
+                                toastr.success("Password Updated Successfully");
+                            }
+                            else{
+                                ele.closest('.change-password-div').find('input[name="current_password"]').addClass('is-invalid');
+                                ele.closest('.change-password-div').find('input[name="current_password"]').closest('div').find('strong').text(data.message);
+                            }
+                        }
+                    });
+                }
             }
         });
     });

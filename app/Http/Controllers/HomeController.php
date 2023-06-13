@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\login_sessions;
 use App\Models\User;
 use Stevebauman\Location\Facades\Location;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
 use Carbon\Carbon;
 
 class HomeController extends Controller
@@ -80,5 +82,18 @@ class HomeController extends Controller
         $user->bio = $request->bio;
         $user->save();
         return response()->json(['success'=>1]);
+    }
+
+    function password_update(Request $request)
+    {
+        $user = User::find(Auth::user()->id);
+        if(Hash::check($request->old_pass, $user->password))
+        {
+            $user->password = Hash::make($request->new_pass);
+            $user->save();
+
+            return response()->json(["success"=>1,"message"=>"Password Updated Successfully"]);
+        }
+        return response()->json(["success"=>0,"message"=>"Current Password Not Match"]);
     }
 }

@@ -43,5 +43,6 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::get('get-sessions', [HomeController::class, 'get_sessions'])->name('get.sessions');
     Route::post('profile-update', [HomeController::class, 'profile_update'])->name('profile.update');
+    Route::post('password-update', [HomeController::class, 'password_update'])->name('password.update');
 });
 Route::post('login',[IndexController::class,'login'])->name('login');
