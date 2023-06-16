@@ -22,7 +22,7 @@
             <div class="col-12 col-md-5 col-lg-6">
                 <div class="card card-shadow border-0">
                     <div class="card-body">
-                        <form method="POST" action="{{ route('register') }}">
+                        <form method="POST" action="{{ route('login') }}">
                             @csrf
                             <input type="hidden" name="device" class="device">
                             <div class="row g-6">
