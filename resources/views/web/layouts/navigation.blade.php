@@ -78,7 +78,7 @@
         </li>
 
         <!-- Support -->
-        <li class="nav-item d-none d-xl-block flex-xl-grow-1">
+        {{-- <li class="nav-item d-none d-xl-block flex-xl-grow-1">
             <a class="nav-link py-0 py-lg-8" id="tab-support" href="#tab-content-support" title="Support"
                 data-bs-toggle="tab" role="tab">
                 <div class="icon icon-xl">
@@ -92,7 +92,7 @@
                     </svg>
                 </div>
             </a>
-        </li>
+        </li> --}}
 
         <!-- Switcher -->
         <li class="nav-item d-none d-xl-block">
