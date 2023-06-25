@@ -129,7 +129,7 @@
 </nav>
 
 <!-- Navigation -->
-
+@if(Route::current()->getName() == 'my.chat')
 <!-- Sidebar -->
 <aside class="sidebar bg-light">
     <div class="tab-content h-100" role="tablist">
@@ -2811,3 +2811,4 @@
     </div>
 </aside>
 <!-- Sidebar -->
+@endif

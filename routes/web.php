@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PushNotification;
 use App\Http\Controllers\MessageController;
 use Symfony\Component\Mime\MessageConverter;
+use App\Http\Controllers\SettingController;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -40,6 +41,9 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('my-chat',[MessageController::class,'my_chat'])->name('my.chat');
     Route::get('logout',[HomeController::class,'logout'])->name('logout');
     Route::get('online-user', [HomeController::class, 'online_user'])->name('online-user');
+    
+    Route::get('two-step-verification', [SettingController::class, 'two_step_verification'])->name('two.step.verification');
+    
 
     Route::get('get-sessions', [HomeController::class, 'get_sessions'])->name('get.sessions');
     Route::post('profile-update', [HomeController::class, 'profile_update'])->name('profile.update');
