@@ -173,6 +173,7 @@
                 $('.qr-main-div').find(".row[data-step='1']").hide();
                 $('.qr-main-div').find(".row[data-step='2']").show();
                 $('.js-btn-back').show();
+                $("#auth_code").val('');
                 $(this).text("Verify");
             }
             else{
