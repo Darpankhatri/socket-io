@@ -2577,12 +2577,14 @@
                                             <div class="accordion-header">
                                                 <div class="row align-items-center">
                                                     <div class="col">
-                                                        <h5>Two-step verifications</h5>
-                                                        <p>Two-Step Verification is off</p>
+                                                        <a href="{{ route('two.step.verification') }}">
+                                                            <h5>Two-step verifications</h5>
+                                                            <p>Two-Step Verification is off</p>
+                                                        </a>
                                                     </div>
                                                     <div class="col-auto">
                                                         <div class="form-check form-switch">
-                                                            <input class="form-check-input" type="checkbox"
+                                                            <input class="form-check-input" disabled type="checkbox"
                                                                 id="accordion-security-check-1">
                                                             <label class="form-check-label"
                                                                 for="accordion-security-check-1"></label>

@@ -21,7 +21,31 @@
     {
         text-transform:capitalize;
     }
+    .hide{
+        display: none;
+    }
+    #qr-code-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 </style>
+
+{{-- custom css --}}
+<style>
+    .text-left {
+        text-align: left;
+    }
+    .left-border-active{
+        border-left: 6px solid #00ff00 !important;
+        border-radius: 9px !important;
+    }
+    .left-border{
+        border-left: 6px solid #ff000d !important;
+        border-radius: 9px !important;
+    }
+</style>
+{{-- custom css --}}
 
 <style>
         /* loader css start */

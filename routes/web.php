@@ -43,6 +43,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('online-user', [HomeController::class, 'online_user'])->name('online-user');
     
     Route::get('two-step-verification', [SettingController::class, 'two_step_verification'])->name('two.step.verification');
+    Route::get('google-auth-generate-qr', [SettingController::class, 'generate_qr'])->name('google.generate.qr');
+    Route::get('google-auth-verify-code', [SettingController::class, 'verify_code'])->name('google.auth.verify');
     
 
     Route::get('get-sessions', [HomeController::class, 'get_sessions'])->name('get.sessions');

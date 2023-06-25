@@ -522,3 +522,49 @@
         </div>
     </div>
 </div>
+
+<!-- Modal: Google Authenticator -->
+<div class="modal fade" id="modal-google-authenticator" tabindex="-1" aria-labelledby="modal-google-authenticator"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-fullscreen-xl-down">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="js-title-step">
+                    Google Authenticator
+                </h4>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body py-0 qr-main-div">
+                <div class="row" data-step="1" data-title="This is the first step!">
+                    {{-- <h1>Google Authenticator Setup</h1> --}}
+                    <p>In the Google Authenticator app tap the +</p>
+                    <p>You can enter the secret key manually:</p>
+                    <p>Secret Key: <span id="secret-key"></span></p>
+                    <p>Scan the QR code below:</p>
+                    <div id="qr-code-container">
+                        <img id="qr-authenticator" style="width: 45%" src="" alt="Google Authenticator QR Code">
+                    </div>
+                </div>
+                <div class="row hide" data-step="2" data-title="This is the second step!">
+                    <h5>Enter the 6-digit code you see in the app</h5>
+                    <div class="form-floating mb-6">
+                        <input type="text" class="form-control" name="auth_code"
+                            id="auth_code" placeholder="Enter Code" autocomplete="">
+                        <label for="auth_code">Enter Code</label>
+                        <span class="invalid-feedback" role="alert">
+                            <strong></strong>
+                        </span>
+                    </div>
+                    
+                </div>
+            </div>
+            <!-- Modal body -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-danger pull-left" data-bs-dismiss="modal" aria-label="Close">Cancel</button>
+                <button type="button" class="btn btn-outline-warning js-btn-back hide" data-orientation="previous">Back</button>
+                <button type="button" class="btn btn-outline-success js-btn-next" data-orientation="next">Next</button>
+            </div>
+        </div>
+    </div>
+</div>
