@@ -71,14 +71,14 @@
                                     <h5 style="float: left">2-Step Verification is ON since Jul 6, 2022</h5>
                                 </div>
                                 <div class="col-auto">
-                                    <button class="btn btn-primary">TURN OFF</button>
+                                    <button class="btn btn-danger">TURN OFF</button>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="d-flex align-items-center mb-4 px-6">
-                        <small class="text-muted me-auto">Available second steps    </small>
+                    <div class="d-flex align-items-center mt-4 mb-2 px-6">
+                        <p class="text-muted me-auto">Available second steps</p>
                     </div>
     
                     <div class="card border-0">
@@ -92,8 +92,8 @@
                                             data-bs-target="#accordion-profile-body-1" aria-expanded="false"
                                             aria-controls="accordion-profile-body-1">
                                             <div>
-                                                <h5>Profile settings</h5>
-                                                <p>Change your profile settings</p>
+                                                <h5>Authenticator app</h5>
+                                                <p>Use the Authenticator app to get verification codes at no charge, even when your phone is offline. Available for Android and iPhone.</p>
                                             </div>
                                         </a>
                                     </div>
@@ -122,113 +122,6 @@
     
                                             <button type="button"
                                                 class="btn btn-block btn-lg btn-primary w-100 profile-save">Save</button>
-                                        </div>
-                                    </div>
-                                </div>
-    
-                                <div class="accordion-item">
-                                    <div class="accordion-header" id="accordion-profile-2">
-                                        <a class="accordion-button text-reset collapsed cursor-pointer"
-                                            data-bs-toggle="collapse"
-                                            data-bs-target="#accordion-profile-body-2" aria-expanded="false"
-                                            aria-controls="accordion-profile-body-2">
-                                            <div>
-                                                <h5>Social accounts</h5>
-                                                <p>Add your social accounts</p>
-                                            </div>
-                                        </a>
-                                    </div>
-    
-                                    <div id="accordion-profile-body-2" class="accordion-collapse collapse"
-                                        aria-labelledby="accordion-profile-2"
-                                        data-parent="#accordion-profile">
-                                        <div class="accordion-body">
-                                            <div class="form-floating mb-6">
-                                                <input type="text" class="form-control"
-                                                    id="profile-twitter" placeholder="Twitter">
-                                                <label for="profile-twitter">Twitter</label>
-                                            </div>
-    
-                                            <div class="form-floating mb-6">
-                                                <input type="text" class="form-control"
-                                                    id="profile-facebook" placeholder="Facebook">
-                                                <label for="profile-facebook">Facebook</label>
-                                            </div>
-    
-                                            <div class="form-floating mb-6">
-                                                <input type="text" class="form-control"
-                                                    id="profile-instagram" placeholder="Instagram">
-                                                <label for="profile-instagram">Instagram</label>
-                                            </div>
-    
-                                            <button type="button"
-                                                class="btn btn-block btn-lg btn-primary w-100">Save</button>
-                                        </div>
-                                    </div>
-                                </div>
-    
-                                <!-- Switch -->
-                                <div class="accordion-item">
-                                    <div class="accordion-header">
-                                        <div class="row align-items-center">
-                                            <div class="col">
-                                                <h5>Appearance</h5>
-                                                <p>Choose light or dark theme</p>
-                                            </div>
-                                            <div class="col-auto">
-                                                <a class="switcher-btn text-reset" href="#!"
-                                                    title="Themes">
-                                                    <div class="switcher-icon switcher-icon-dark icon icon-lg d-none"
-                                                        data-theme-mode="dark">
-                                                        <svg xmlns="http://www.w3.org/2000/svg"
-                                                            width="24" height="24"
-                                                            viewBox="0 0 24 24" fill="none"
-                                                            stroke="currentColor" stroke-width="2"
-                                                            stroke-linecap="round" stroke-linejoin="round"
-                                                            class="feather feather-moon">
-                                                            <path
-                                                                d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z">
-                                                            </path>
-                                                        </svg>
-                                                    </div>
-                                                    <div class="switcher-icon switcher-icon-light icon icon-lg d-none"
-                                                        data-theme-mode="light">
-                                                        <svg xmlns="http://www.w3.org/2000/svg"
-                                                            width="24" height="24"
-                                                            viewBox="0 0 24 24" fill="none"
-                                                            stroke="currentColor" stroke-width="2"
-                                                            stroke-linecap="round" stroke-linejoin="round"
-                                                            class="feather feather-sun">
-                                                            <circle cx="12" cy="12"
-                                                                r="5"></circle>
-                                                            <line x1="12" y1="1"
-                                                                x2="12" y2="3">
-                                                            </line>
-                                                            <line x1="12" y1="21"
-                                                                x2="12" y2="23">
-                                                            </line>
-                                                            <line x1="4.22" y1="4.22"
-                                                                x2="5.64" y2="5.64">
-                                                            </line>
-                                                            <line x1="18.36" y1="18.36"
-                                                                x2="19.78" y2="19.78">
-                                                            </line>
-                                                            <line x1="1" y1="12"
-                                                                x2="3" y2="12">
-                                                            </line>
-                                                            <line x1="21" y1="12"
-                                                                x2="23" y2="12">
-                                                            </line>
-                                                            <line x1="4.22" y1="19.78"
-                                                                x2="5.64" y2="18.36">
-                                                            </line>
-                                                            <line x1="18.36" y1="5.64"
-                                                                x2="19.78" y2="4.22">
-                                                            </line>
-                                                        </svg>
-                                                    </div>
-                                                </a>
-                                            </div>
                                         </div>
                                     </div>
                                 </div>

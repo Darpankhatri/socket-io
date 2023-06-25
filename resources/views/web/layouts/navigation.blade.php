@@ -2578,7 +2578,7 @@
                                                 <div class="row align-items-center">
                                                     <div class="col">
                                                         <h5>Two-step verifications</h5>
-                                                        <p>Enable two-step verifications</p>
+                                                        <p>Two-Step Verification is off</p>
                                                     </div>
                                                     <div class="col-auto">
                                                         <div class="form-check form-switch">
