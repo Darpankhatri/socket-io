@@ -1,14 +1,3 @@
-<!-- GENERATE SSL 
-openssl genrsa -out key.pem
-openssl req -new -key key.pem -out csr.pem
-openssl x509 -req -days 9999 -in csr.pem -signkey key.pem -out cert.pem
-rm csr.pem -->
-
-<!-- live location
-composer require stevebauman/location
-php artisan vendor:publish --provider="Torann\GeoIP\GeoIPServiceProvider" --tag=config
-$ip = $request->ip();
--->
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
