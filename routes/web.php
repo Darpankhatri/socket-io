@@ -26,7 +26,6 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/check', [IndexController::class, 'check_yes'])->name('check_yes');
 
 
 Route::post('/save-token', [PushNotification::class, 'saveToken'])->name('save-token');
