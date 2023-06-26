@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 26, 2023 at 01:33 AM
--- Server version: 10.4.24-MariaDB
--- PHP Version: 7.4.29
+-- Generation Time: Jun 26, 2023 at 11:46 AM
+-- Server version: 10.4.16-MariaDB
+-- PHP Version: 7.4.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -36,85 +36,6 @@ CREATE TABLE `failed_jobs` (
   `exception` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
   `failed_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `friends`
---
-
-CREATE TABLE `friends` (
-  `id` int(11) NOT NULL,
-  `user_a` int(11) NOT NULL,
-  `user_b` int(11) NOT NULL,
-  `is_friend` tinyint(4) NOT NULL DEFAULT 0,
-  `is_active` tinyint(4) NOT NULL DEFAULT 1,
-  `is_deleted` tinyint(4) NOT NULL DEFAULT 0,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
-  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `friend_request`
---
-
-CREATE TABLE `friend_request` (
-  `id` int(11) NOT NULL,
-  `requester_id` int(11) NOT NULL,
-  `request_to_id` int(11) NOT NULL,
-  `is_active` tinyint(4) NOT NULL DEFAULT 1,
-  `is_deleted` tinyint(4) NOT NULL DEFAULT 0,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
-  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `login_sessions`
---
-
-CREATE TABLE `login_sessions` (
-  `id` int(11) NOT NULL,
-  `user_id` bigint(20) NOT NULL,
-  `ip` varchar(512) NOT NULL,
-  `session_id` varchar(512) NOT NULL,
-  `device_token` varchar(512) DEFAULT NULL,
-  `device_info` varchar(512) DEFAULT NULL,
-  `browser_info` varchar(512) DEFAULT NULL,
-  `last_seen` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
-  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `login_sessions`
---
-
-INSERT INTO `login_sessions` (`id`, `user_id`, `ip`, `session_id`, `device_token`, `device_info`, `browser_info`, `last_seen`, `created_at`, `updated_at`) VALUES
-(43, 2, '103.217.178.0', 'znUG3Wm2uvjs7iOnaAp1W5NXnyWhvvOiUcMvzkqs', 'fAEGOyYzWGPADkzs7x4yRX:APA91bH7L-9xEQsgaQIhgArII5hVWMygsMO1I51O8pdcwWRJhp9xU8mTYqU0QHrZBLzgKd30TLQ9b-juIgVZfJC4jje-3CJRB4-Aa_QqIoYD3sWarfRaW_SkYP73dY65pv3I0q2FgxrX', 'Windows: Desktop', 'Browser Opera', '2023-06-25 13:18:30', '2023-06-25 11:02:22', '2023-06-25 13:18:30'),
-(44, 2, '103.217.178.0', 'C8hMjELYtQwRp39ZPxGs8Gxjl07xQxXum6zOa30e', 'fAEGOyYzWGPADkzs7x4yRX:APA91bH7L-9xEQsgaQIhgArII5hVWMygsMO1I51O8pdcwWRJhp9xU8mTYqU0QHrZBLzgKd30TLQ9b-juIgVZfJC4jje-3CJRB4-Aa_QqIoYD3sWarfRaW_SkYP73dY65pv3I0q2FgxrX', 'Windows: Desktop', 'Browser Opera', '2023-06-25 16:26:56', '2023-06-25 15:51:11', '2023-06-25 16:26:56'),
-(45, 2, '103.217.178.0', 'FD3Nv650u8pfsNxSpLptuwG1cYE0Zo9teEjfKERU', 'fAEGOyYzWGPADkzs7x4yRX:APA91bH7L-9xEQsgaQIhgArII5hVWMygsMO1I51O8pdcwWRJhp9xU8mTYqU0QHrZBLzgKd30TLQ9b-juIgVZfJC4jje-3CJRB4-Aa_QqIoYD3sWarfRaW_SkYP73dY65pv3I0q2FgxrX', 'Windows: Desktop', 'Browser Opera', '2023-06-25 18:30:56', '2023-06-25 16:32:34', '2023-06-25 18:30:56');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `message`
---
-
-CREATE TABLE `message` (
-  `id` int(11) NOT NULL,
-  `friend_id` int(11) NOT NULL,
-  `sender_id` int(11) NOT NULL,
-  `receiver_id` int(11) NOT NULL,
-  `message` text NOT NULL,
-  `is_active` tinyint(4) NOT NULL DEFAULT 1,
-  `is_deleted` tinyint(4) NOT NULL DEFAULT 0,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
-  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -153,29 +74,6 @@ CREATE TABLE `password_resets` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `sessions`
---
-
-CREATE TABLE `sessions` (
-  `id` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `user_id` bigint(20) UNSIGNED DEFAULT NULL,
-  `ip_address` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `user_agent` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `payload` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `last_activity` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `sessions`
---
-
-INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('C8hMjELYtQwRp39ZPxGs8Gxjl07xQxXum6zOa30e', 2, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36 OPR/101.0.0.0 (Edition developer)', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoicjlGY0VabkRYSG93c3VqV05rUHF4NUhWZllDTkdNN3ZPa1B2VHdNVCI7czozOiJ1cmwiO2E6MTp7czo4OiJpbnRlbmRlZCI7czo0MzoiaHR0cDovLzEyNy4wLjAuMTo4MDAwL3R3by1zdGVwLXZlcmlmaWNhdGlvbiI7fXM6OToiX3ByZXZpb3VzIjthOjE6e3M6MzoidXJsIjtzOjQzOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvdHdvLXN0ZXAtdmVyaWZpY2F0aW9uIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6Mjt9', 1687728416),
-('FD3Nv650u8pfsNxSpLptuwG1cYE0Zo9teEjfKERU', 2, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36 OPR/101.0.0.0 (Edition developer)', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoiMldCUVF4c0dPV2lRQ0Zac0NONm15ZWNOa0VCS0pIZ1JjUldLNkNlMSI7czozOiJ1cmwiO2E6MTp7czo4OiJpbnRlbmRlZCI7czo0MzoiaHR0cDovLzEyNy4wLjAuMTo4MDAwL3R3by1zdGVwLXZlcmlmaWNhdGlvbiI7fXM6OToiX3ByZXZpb3VzIjthOjE6e3M6MzoidXJsIjtzOjQzOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvdHdvLXN0ZXAtdmVyaWZpY2F0aW9uIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6Mjt9', 1687735856);
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `users`
 --
 
@@ -191,8 +89,6 @@ CREATE TABLE `users` (
   `last_seen` timestamp NOT NULL DEFAULT current_timestamp(),
   `device_token` varchar(512) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `is_two_step` tinyint(4) NOT NULL DEFAULT 0,
-  `google2fa_secret` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -201,10 +97,9 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `email`, `image`, `phone`, `bio`, `email_verified_at`, `password`, `last_seen`, `device_token`, `remember_token`, `is_two_step`, `google2fa_secret`, `created_at`, `updated_at`) VALUES
-(1, 'darpan', 'darpankhatri817@gmail.com', 'chat/img/default-user-image.png', NULL, NULL, NULL, '$2y$10$pGGph5GQ9erVcUrLFUw/l.x4uZb3ziO9lIUhY6fNn/0pcEi7nQcgq', '2023-06-22 14:13:14', 'c-IZq_4Ww_ytYBLER0KbYP:APA91bF544ABAQUF5GaImgLikjipm73BeDxKGuIGyqFHzUDcvtu5ysQn0mBfcyv9meuPeAlbVNb7bxfjkiVBrOX4TwQkq0Li8CAqEM0qFBCEn_WSogIpEmZeaXl34mAWGuVZj_sdhQUO', NULL, 0, NULL, '2023-06-04 04:37:36', '2023-06-22 14:13:14'),
-(2, 'Jesse Cherry', 'admin@project.com', 'chat/img/default-user-image.png', '+1 (688) 194-6256', 'Deleniti mollitia et', NULL, '$2y$10$3hfJk87wqsnx6Brk0QUEbuQhky6vN92Viz7I2/SVGQ0kI6kwnYMEa', '2023-06-25 18:30:56', NULL, NULL, 0, NULL, '2023-06-05 03:30:19', '2023-06-25 18:30:56'),
-(3, 'Darpan Kumar', 'vew@gmail.com', 'chat/img/default-user-image.png', NULL, NULL, NULL, '$2y$10$izvh83TBiDWuKb01/Vg8Ze7qHmiKftw0nfQleIEZ7hTCpPcYymjqW', '2023-06-13 20:49:31', NULL, NULL, 0, NULL, '2023-06-13 15:49:31', '2023-06-13 15:49:31');
+INSERT INTO `users` (`id`, `name`, `email`, `image`, `phone`, `bio`, `email_verified_at`, `password`, `last_seen`, `device_token`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, 'darpan', 'darpankhatri817@gmail.com', 'chat/img/default-user-image.png', NULL, NULL, NULL, '$2y$10$pGGph5GQ9erVcUrLFUw/l.x4uZb3ziO9lIUhY6fNn/0pcEi7nQcgq', '2023-06-07 12:49:13', 'c-IZq_4Ww_ytYBLER0KbYP:APA91bF544ABAQUF5GaImgLikjipm73BeDxKGuIGyqFHzUDcvtu5ysQn0mBfcyv9meuPeAlbVNb7bxfjkiVBrOX4TwQkq0Li8CAqEM0qFBCEn_WSogIpEmZeaXl34mAWGuVZj_sdhQUO', NULL, '2023-06-04 04:37:36', '2023-06-07 12:49:13'),
+(2, 'Jesse Cherry', 'admin@project.com', 'chat/img/default-user-image.png', '+1 (688) 194-6256', 'Deleniti mollitia et', NULL, '$2y$10$dFkE.VD/375hHjIakO2xDOHoNckG6UzPTQcsW/18mXINcYgJM6cr6', '2023-06-22 05:53:05', NULL, NULL, '2023-06-05 03:30:19', '2023-06-22 05:53:05');
 
 --
 -- Indexes for dumped tables
@@ -218,30 +113,6 @@ ALTER TABLE `failed_jobs`
   ADD UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`);
 
 --
--- Indexes for table `friends`
---
-ALTER TABLE `friends`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `friend_request`
---
-ALTER TABLE `friend_request`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `login_sessions`
---
-ALTER TABLE `login_sessions`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `message`
---
-ALTER TABLE `message`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `migrations`
 --
 ALTER TABLE `migrations`
@@ -252,14 +123,6 @@ ALTER TABLE `migrations`
 --
 ALTER TABLE `password_resets`
   ADD KEY `password_resets_email_index` (`email`);
-
---
--- Indexes for table `sessions`
---
-ALTER TABLE `sessions`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `sessions_user_id_index` (`user_id`),
-  ADD KEY `sessions_last_activity_index` (`last_activity`);
 
 --
 -- Indexes for table `users`
@@ -279,30 +142,6 @@ ALTER TABLE `failed_jobs`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `friends`
---
-ALTER TABLE `friends`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `friend_request`
---
-ALTER TABLE `friend_request`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `login_sessions`
---
-ALTER TABLE `login_sessions`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
-
---
--- AUTO_INCREMENT for table `message`
---
-ALTER TABLE `message`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
@@ -312,7 +151,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
